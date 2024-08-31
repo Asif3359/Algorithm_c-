@@ -5,30 +5,32 @@ int main()
 {
     int n, e;
     cin >> n >> e;
+    vector<int> mat[n];
 
-    int mat[n][n];
-    memset(mat, 0, sizeof(mat));
     while (e--)
     {
         int a, b;
         cin >> a >> b;
-        mat[a][b] = 1;
-        mat[b][a] = 1;
+        mat[a].push_back(b);
+        mat[b].push_back(a);
     }
+
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        cout << i << " - ";
+        for (int x : mat[i])
         {
-            cout << mat[i][j] << " ";
+            cout << x << " ";
         }
         cout << endl;
     }
+    cout << endl;
 
     return 0;
 }
-
-/*
-input :
+/**
+ * 
+input : 
 6 6
 0 1
 1 5
@@ -36,11 +38,11 @@ input :
 0 3
 3 4
 2 4
-output :
-0 1 0 1 1 0
-1 0 0 0 0 1
-0 0 0 0 1 0
-1 0 0 0 1 0
-1 0 1 1 0 0
-0 1 0 0 0 0
-*/
+output:
+0 - 1 4 3
+1 - 0 5
+2 - 4
+3 - 0 4
+4 - 0 3 2
+5 - 1
+ */
