@@ -11,6 +11,7 @@ void bfs(int src)
     qu.push(src);
     vis[src] = true;
     level[src] = 0;
+    parent[src] = -1; 
 
     while (!qu.empty())
     {
@@ -23,7 +24,7 @@ void bfs(int src)
                 qu.push(child);
                 vis[child] = true;
                 level[child] = level[par] + 1;
-                parent[child] = parent[par] + 1;
+                parent[child] = par;
             }
         }
     }
@@ -76,5 +77,6 @@ input:
 1 3
 2 0
 3 4
-0
+
+0 3
 */
