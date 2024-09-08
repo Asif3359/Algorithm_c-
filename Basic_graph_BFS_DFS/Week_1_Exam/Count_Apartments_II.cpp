@@ -33,6 +33,7 @@ int dfs(int si, int sj)
 
         if (valid(ci, cj) && !vis[ci][cj])
         {
+            vis[si][sj] = true;
             count += dfs(ci, cj);
         }
     }
