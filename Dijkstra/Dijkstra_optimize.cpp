@@ -3,6 +3,7 @@ using namespace std;
 const int N = 100;
 vector<pair<int, int>> v[N];
 int dis[N];
+int par[N];
 class cmp
 {
 public:
@@ -30,6 +31,7 @@ void dijkstra(int src)
             {
                 // path relax
                 dis[childNode] = cost + childCost;
+                par[childNode] = node;
                 pq.push({childNode, dis[childNode]});
             }
         }
@@ -50,10 +52,29 @@ int main()
     {
         dis[i] = INT_MAX;
     }
-    dijkstra(0);
-    for (int i = 0; i < n; i++)
+    dijkstra(1);
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << i << "-> " << dis[i] << endl;
+    // }
+    int current = n;
+    vector<int> path;
+
+    while (true)
     {
-        cout << i << "-> " << dis[i] << endl;
+        path.push_back(current);
+        if (current == 1)
+        {
+            break;
+        }
+        current = par[current];
     }
+    reverse(path.begin(),path.end());
+
+    for (int x : path)
+    {
+        cout << x << " ";
+    }
+
     return 0;
 }
