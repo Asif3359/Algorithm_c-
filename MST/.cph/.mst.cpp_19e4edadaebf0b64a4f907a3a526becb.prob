@@ -1,0 +1,1 @@
+{"name":"Local: mst","url":"/media/asif-ahammed/Important/Phitrton_Course/Algorithm/MST/mst.cpp","tests":[{"id":1726850295267,"input":"5 7\n0 1 2\n0 2 3\n0 3 3\n0 4 6\n2 4 4\n2 1 7\n1 4 5","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/asif-ahammed/Important/Phitrton_Course/Algorithm/MST/mst.cpp","group":"local","local":true}
